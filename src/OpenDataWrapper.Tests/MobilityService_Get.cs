@@ -22,7 +22,7 @@ namespace OpenDataWrapper.Tests
         public void Get_ECharging_Station_Data()
         {
             var mobilityService = new MobilityService();
-            var result = mobilityService.Get<MobilityResponse<ChargingStation, ChargingPlug>>(RepresentationType.Flat, new string[] { StationType.EChargingStation }).Result;
+            var result = mobilityService.Get<MobilityResponse<ChargingStation>>(RepresentationType.Flat, new string[] { StationType.EChargingStation }).Result;
 
             Assert.IsTrue(result.Data.Count > 0);
         }

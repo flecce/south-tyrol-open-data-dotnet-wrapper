@@ -6,26 +6,26 @@ namespace OpenDataWrapper.Domains.Mobility.Dto
     public class ChargingStation
     {
         [JsonPropertyName("city")]
-        public string City { get; }
+        public string City { get; set; }
 
         [JsonPropertyName("state")]
-        public string State { get; }
+        public string State { get; set; }
 
         [JsonPropertyName("address")]
-        public string Address { get; }
+        public string Address { get; set; }
 
         [JsonPropertyName("capacity")]
-        public int Capacity { get; }
+        public int Capacity { get; set; }
 
         [JsonPropertyName("provider")]
-        public string Provider { get; }
+        public string Provider { get; set; }
     }
 
 
     public class ChargingPlug
     {
         [JsonPropertyName("outlets")]
-        public List<Outlet> Outlets { get; }
+        public List<Outlet> Outlets { get; set; }
     }
 
     public class Outlet

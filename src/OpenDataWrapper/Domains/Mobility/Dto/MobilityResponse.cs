@@ -2,6 +2,33 @@
 
 namespace OpenDataWrapper.Domains.Mobility.Dto
 {
+    public class MobilityResponse<TMetadata>
+    {
+        [JsonPropertyName("sactive")]
+        public bool Active { get; set; }
+
+        [JsonPropertyName("savailable")]
+        public bool Available { get; set; }
+
+        [JsonPropertyName("scode")]
+        public string Code { get; set; }
+
+        [JsonPropertyName("sname")]
+        public string Name { get; set; }
+
+        [JsonPropertyName("stype")]
+        public string Type { get; set; }
+
+        [JsonPropertyName("sorigin")]
+        public string Origin { get; set; }
+
+        [JsonPropertyName("scoordinate")]
+        public Coordinate Coordinate { get; set; }
+
+        [JsonPropertyName("smetadata")]
+        public TMetadata Metadata { get; set; }
+    }
+
     public class MobilityResponse<TParentMetadata, TMetadata>
     {
         [JsonPropertyName("pactive")]
