@@ -13,7 +13,7 @@ namespace OpenDataWrapper.Tests
         public void Get_Bicycle_Station_Data()
         {
             var mobilityService = new MobilityService();
-            var result = mobilityService.Get<MobilityResponse<BicycleStationMetadata, BicycleMetadata>>(RepresentationType.Flat, new string[] { StationType.Bicycle }).Result;
+            var result = mobilityService.Get<MobilityResponse<BicycleStationMetadata, BicycleMetadata>>(RequestBase.Create(RepresentationType.Flat, new string[] { StationType.Bicycle })).Result;
 
             Assert.IsTrue(result.Data.Count > 0);
         }
@@ -22,7 +22,7 @@ namespace OpenDataWrapper.Tests
         public void Get_ECharging_Station_Data()
         {
             var mobilityService = new MobilityService();
-            var result = mobilityService.Get<MobilityResponse<ChargingStation>>(RepresentationType.Flat, new string[] { StationType.EChargingStation }).Result;
+            var result = mobilityService.Get<MobilityResponse<ChargingStation>>(RequestBase.Create(RepresentationType.Flat, new string[] { StationType.EChargingStation })).Result;
 
             Assert.IsTrue(result.Data.Count > 0);
         }
@@ -31,8 +31,8 @@ namespace OpenDataWrapper.Tests
         public void Get_ECharging_Station_And_ECharging_Plug_Data()
         {
             var mobilityService = new MobilityService();
-            var result = mobilityService.Get<MobilityResponse<ChargingStation, ChargingPlug>>(RepresentationType.Flat, new string[] { StationType.EChargingStation, StationType.ECharingPlug }).Result;
-
+            var result = mobilityService.Get<MobilityResponse<ChargingStation>>(RequestBase.Create(RepresentationType.Flat, new string[] { StationType.EChargingStation, StationType.ECharingPlug })).Result;
+            
             Assert.IsTrue(result.Data.Count > 0);
         }
     }
