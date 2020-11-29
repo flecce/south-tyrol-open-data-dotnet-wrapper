@@ -10,16 +10,18 @@ namespace OpenDataWrapper.Domains.Mobility
 
         public async Task<ResponseBase<T>> Get<T>(string representationType, string[] stationType, int offset = 0, int limit = 200)
         {
-            HttpClient httpClient = new HttpClient();
-            HttpResponseMessage response = await httpClient.GetAsync(
-                $"{BaseUrl}/{representationType}/{string.Join(",", stationType)}?offset={offset}&limit={limit}");
-
-            if (response.IsSuccessStatusCode)
+            using (HttpClient httpClient = new HttpClient())
             {
-                return await response.Content.ReadAsAsync<ResponseBase<T>>();
-            }
+                HttpResponseMessage response = await httpClient.GetAsync(
+                    $"{BaseUrl}/{representationType}/{string.Join(",", stationType)}?offset={offset}&limit={limit}");
 
-            return null;
+                if (response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadAsAsync<ResponseBase<T>>();
+                }
+
+                return null;
+            }                
         }
     }
 }
