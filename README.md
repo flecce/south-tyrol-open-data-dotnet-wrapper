@@ -1,1 +1,3 @@
-# south-tyrol-open-data-dotnet-wrapper
+# Simple South Tyrol Open Data .NET wrapper
+
+https://opendatahub.readthedocs.io/en/latest/index.html
