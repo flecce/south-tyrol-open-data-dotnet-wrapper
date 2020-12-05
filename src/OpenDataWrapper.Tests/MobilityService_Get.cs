@@ -13,7 +13,7 @@ namespace OpenDataWrapper.Tests
         public void Get_Bicycle_Station_Data()
         {
             var mobilityService = new MobilityService();
-            var result = mobilityService.Get<MobilityResponse<BicycleStationMetadata, BicycleMetadata>>(RequestBase.Create(RepresentationType.Flat, new string[] { StationType.Bicycle })).Result;
+            var result = mobilityService.Get<MobilityResponse<BicycleStation, Bicycle>>(RequestBase.Create(RepresentationType.Flat, new string[] { StationType.Bicycle })).Result;
 
             Assert.IsTrue(result.Data.Count > 0);
         }

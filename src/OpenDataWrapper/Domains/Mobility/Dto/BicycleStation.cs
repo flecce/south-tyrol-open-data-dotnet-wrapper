@@ -2,7 +2,7 @@
 
 namespace OpenDataWrapper.Domains.Mobility.Dto
 {
-    public class BicycleStationMetadata
+    public class BicycleStation
     {
         [JsonPropertyName("municipality")]
         public string Municipality { get; set; }
@@ -11,7 +11,7 @@ namespace OpenDataWrapper.Domains.Mobility.Dto
         public BikeData Bikes { get; set; }
     }
 
-    public class BicycleMetadata
+    public class Bicycle
     {
         [JsonPropertyName("type")]
         public string Type { get; set; }
