@@ -4,6 +4,10 @@ using System.Text.Json.Serialization;
 
 namespace OpenDataWrapper.Domains.Mobility.Dto
 {
+    /// <summary>
+    /// Station type response.
+    /// </summary>
+    /// <typeparam name="TMetadata">Parent station metadata type.</typeparam>
     public class MobilityStationTypeResponse<TMetadata> where TMetadata : class
     {
         [JsonPropertyName("sactive")]
@@ -31,6 +35,11 @@ namespace OpenDataWrapper.Domains.Mobility.Dto
         public TMetadata Metadata { get; set; }
     }
 
+    /// <summary>
+    /// Station type respose.
+    /// </summary>
+    /// <typeparam name="TParentMetadata">Parent metadata type.</typeparam>
+    /// <typeparam name="TMetadata">Station metadata type.</typeparam>
     public class MobilityStationTypeResponse<TParentMetadata, TMetadata>
         where TParentMetadata : class
         where TMetadata : class
@@ -84,6 +93,10 @@ namespace OpenDataWrapper.Domains.Mobility.Dto
         public TMetadata Metadata { get; set; }
     }
 
+    /// <summary>
+    /// Data type response.
+    /// </summary>
+    /// <typeparam name="TMetadata">Data type metadata.</typeparam>
     public class MobilityDataTypeResponse<TMetadata> where TMetadata : class
     {
         [JsonPropertyName("tdescription")]

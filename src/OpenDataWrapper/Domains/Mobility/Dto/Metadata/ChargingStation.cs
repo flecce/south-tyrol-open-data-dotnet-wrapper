@@ -3,6 +3,9 @@ using System.Text.Json.Serialization;
 
 namespace OpenDataWrapper.Domains.Mobility.Dto.Metadata
 {
+    /// <summary>
+    /// Charing station metadata.
+    /// </summary>
     public class ChargingStation
     {
         [JsonPropertyName("city")]
@@ -21,7 +24,9 @@ namespace OpenDataWrapper.Domains.Mobility.Dto.Metadata
         public string Provider { get; set; }
     }
 
-
+    /// <summary>
+    /// Charging plug metadata.
+    /// </summary>
     public class ChargingPlug
     {
         [JsonPropertyName("outlets")]

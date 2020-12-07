@@ -2,6 +2,9 @@
 
 namespace OpenDataWrapper.Domains.Mobility.Dto.Metadata
 {
+    /// <summary>
+    /// Bicycle station metadata.
+    /// </summary>
     public class BicycleStationMetadata
     {
         [JsonPropertyName("municipality")]
@@ -11,12 +14,18 @@ namespace OpenDataWrapper.Domains.Mobility.Dto.Metadata
         public BikeData Bikes { get; set; }
     }
 
+    /// <summary>
+    /// Bicycle metadata.
+    /// </summary>
     public class BicycleMetadata
     {
         [JsonPropertyName("type")]
         public string Type { get; set; }
     }
 
+    /// <summary>
+    /// Bike data.
+    /// </summary>
     public class BikeData
     {
         [JsonPropertyName("number-available")]
