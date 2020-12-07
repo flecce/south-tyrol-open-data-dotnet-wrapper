@@ -19,9 +19,9 @@ Clone the repository and build the solution.
 The overall structure of the JSON is the following:
 ```json
     {
-        data: [],
-        offset: 0,
-        limit: 200
+        "data": [],
+        "offset": 0,
+        "limit": 200
     }
 ```
 
@@ -34,7 +34,7 @@ Getting Charging Stations:
     var result = mobilityService.Get<MobilityStationTypeResponse<ChargingStation>>(RequestBase.Create(RepresentationType.Flat, new string[] { StationType.EChargingStation, StationType.ECharingPlug })).Result;
 ```
 
-Getting filtered environment data:
+Getting filtered Environment Data:
 ```csharp
     var mobilityService = new MobilityService();
     var result = mobilityService.Get<MobilityDataTypeResponse<NullMetadata>>(
