@@ -12,9 +12,9 @@ namespace OpenDataWrapper.JsonConverters
             Type typeToConvert,
             JsonSerializerOptions options)
         {
-            var cstIndex = reader.GetString().IndexOf("+");
+            var tzIndex = reader.GetString().IndexOf("+");
             return DateTimeOffset.ParseExact(
-                reader.GetString().Substring(0, (cstIndex > 0 ? cstIndex : 0)),
+                reader.GetString().Substring(0, (tzIndex > 0 ? tzIndex : 0)),
                 "yyyy-MM-dd HH:mm:ss.fff",
                 CultureInfo.InvariantCulture);
         }
