@@ -1,6 +1,6 @@
 # Simple South Tyrol Open Data .NET wrapper (draft)
 
-Simple library to use the South Tyrol open data with .NET framework.
+Simple library to use the South Tyrol open data (V2) with .NET framework.
 Below the official site of open data.
 https://opendatahub.readthedocs.io/en/latest/index.html
 
