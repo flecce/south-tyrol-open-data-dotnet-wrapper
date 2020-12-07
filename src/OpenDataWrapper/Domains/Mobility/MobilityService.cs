@@ -2,6 +2,6 @@
 {
     public class MobilityService : ServiceBase
     {
-        public override string BaseUrl { get => "https://mobility.api.opendatahub.bz.it/v2/"; }
+        public override string BaseUrl { get => "https://mobility.api.opendatahub.bz.it/v2"; }
     }
 }
