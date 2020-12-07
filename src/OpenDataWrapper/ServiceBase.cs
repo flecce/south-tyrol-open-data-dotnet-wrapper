@@ -19,7 +19,7 @@ namespace OpenDataWrapper
                     $"{string.Join(",", request.DataTypes ?? new string[] { "*" })}/" +
                     $"{ (request.From != null ? request.From?.ToString("yyyy-MM-ddTHH:mm:ss.SSSZ/") : "") }" +
                     $"{ (request.To != null ? request.To?.ToString("yyyy-MM-ddTHH:mm:ss.SSSZ/") : "") }" +
-                    $"{ (request.From == null && request.To == null? "latest/" : "") }" +
+                    $"{ (request.From == null || request.To == null ? "latest/" : "") }" +
                     $"?offset={request.Offset}" +
                     $"&limit={request.Limit}" +
                     $"{ (request.Select != null ? "&select=" + request.Select : "") }" +
