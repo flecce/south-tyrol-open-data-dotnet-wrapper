@@ -1,8 +1,10 @@
-﻿using System.Text.Json.Serialization;
+﻿using OpenDataWrapper.JsonConverters;
+using System;
+using System.Text.Json.Serialization;
 
 namespace OpenDataWrapper.Domains.Mobility.Dto
 {
-    public class MobilityResponse<TMetadata>
+    public class MobilityStationTypeResponse<TMetadata> where TMetadata : class
     {
         [JsonPropertyName("sactive")]
         public bool Active { get; set; }
@@ -29,7 +31,9 @@ namespace OpenDataWrapper.Domains.Mobility.Dto
         public TMetadata Metadata { get; set; }
     }
 
-    public class MobilityResponse<TParentMetadata, TMetadata>
+    public class MobilityStationTypeResponse<TParentMetadata, TMetadata>
+        where TParentMetadata : class
+        where TMetadata : class
     {
         [JsonPropertyName("pactive")]
         public bool ParentActive { get; }
@@ -80,12 +84,35 @@ namespace OpenDataWrapper.Domains.Mobility.Dto
         public TMetadata Metadata { get; set; }
     }
 
-    public class Coordinate
+    public class MobilityDataTypeResponse<TMetadata> where TMetadata : class
     {
-        [JsonPropertyName("x")]
-        public double X { get; set; }
+        [JsonPropertyName("tdescription")]
+        public string TypeDescription { get; set; }
 
-        [JsonPropertyName("y")]
-        public double Y { get; set; }
+        [JsonPropertyName("tmetadata")]
+        public TMetadata TypeMetadata { get; set; }
+
+        [JsonPropertyName("tname")]
+        public string Name { get; set; }
+
+        [JsonPropertyName("ttype")]
+        public string Type { get; set; }
+
+        [JsonPropertyName("tunit")]
+        public string Unit { get; set; }
+
+        [JsonPropertyName("mperiod")]
+        public int Period { get; set; }
+
+        [JsonPropertyName("mtransactiontime")]
+        [JsonConverter(typeof(DateTimeOffsetConverter))]
+        public DateTimeOffset TransactionType { get; set; }
+
+        [JsonPropertyName("mvalidtime")]
+        [JsonConverter(typeof(DateTimeOffsetConverter))]
+        public DateTimeOffset ValidTime { get; set; }
+
+        [JsonPropertyName("mvalue")]
+        public double Value { get; set; }
     }
 }
