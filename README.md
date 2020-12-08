@@ -10,7 +10,30 @@ Italy, that are relevant for the economy sector and its actors.
 The main domains are:
 
 - Mobility: this domain contains data about public transportation, parkings, charging station, and so on
-- Tourism: data about events, accomodations, points of interest, and so on
+- Tourism (**not implemented**): data about events, accomodations, points of interest, and so on
+
+### Mobility
+
+#### Traffic stations
+- EnvironmentStation
+- LinkStation
+- ParkingStation
+- ParkingSensor
+- RWISstation
+- Streetstation
+- BluetoothStation
+- MeteoStation
+
+#### Mobility stations
+- CarpoolingHub
+- CarpoolingService
+- CarpoolingUser
+- Bicycle
+- BikesharingStation
+- Bicyclestationbay
+- CarSharingStation
+- EChargingPlug
+- EChargingStation
 
 ## How to build
 Clone the repository and build the solution.
