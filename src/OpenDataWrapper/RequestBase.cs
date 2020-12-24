@@ -4,15 +4,15 @@ namespace OpenDataWrapper
 {
     public class RequestBase
     {
-        public string RepresentationType { get; private set; }
-        public string[] StationTypes { get; private set; }
-        public string[] DataTypes { get; private set; }
-        public DateTime? From { get; private set; }
-        public DateTime? To { get; private set; }
-        public int? Offset { get; private set; }
-        public int? Limit { get; private set; }
-        public string Select { get; private set; }
-        public WhereClause Where { get; private set; }
+        public string RepresentationType { get; set; }
+        public string[] StationTypes { get; set; }
+        public string[] DataTypes { get; set; }
+        public DateTime? From { get; set; }
+        public DateTime? To { get; set; }
+        public int? Offset { get; set; }
+        public int? Limit { get; set; }
+        public string Select { get; set; }
+        public WhereClause Where { get; set; }
 
         public static RequestBase Create(
             string representationType,
@@ -20,8 +20,8 @@ namespace OpenDataWrapper
             string[] dataTypes = null,
             string select = null,
             WhereClause where = null,
-            int offset = 0,
-            int limit = 200)
+            int? offset = 0,
+            int? limit = 200)
         {
             return new RequestBase
             {
