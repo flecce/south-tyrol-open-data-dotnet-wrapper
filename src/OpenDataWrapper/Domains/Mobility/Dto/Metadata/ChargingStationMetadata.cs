@@ -6,7 +6,7 @@ namespace OpenDataWrapper.Domains.Mobility.Dto.Metadata
     /// <summary>
     /// Charing station metadata.
     /// </summary>
-    public class ChargingStation
+    public class ChargingStationMetadata
     {
         [JsonPropertyName("city")]
         public string City { get; set; }
